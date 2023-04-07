@@ -1,0 +1,23 @@
+<ng-template #message>
+  <h5>Escribe algo para comenzar...</h5>
+</ng-template>
+
+
+<div class="row" *ngIf="resultados.length; else message" >
+  <div class="col-md-4 col-sm-6 animate__animated animate__fadeInUp" *ngFor="let gif of resultados">
+
+    <div class="card">
+      <img
+      class="card-img-top"
+      [src]="gif.images.downsized_medium.url"
+      [alt]="gif.title"
+      >
+      <div class="card-body">
+        <p class="card-text ">
+          {{gif.title}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
